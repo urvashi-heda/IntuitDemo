@@ -1,0 +1,50 @@
+dn: dc=urvashidemo,dc=com
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: urvashidemo
+
+dn: ou=groups,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: organizationalUnit
+ou: people
+
+dn: uid=urvashi,ou=people,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Urvashi Heda
+sn: Heda
+uid: urvashi
+userPassword: urvashi
+
+dn: uid=don,ou=people,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Don Jones
+sn: Jones
+uid: don
+userPassword: don
+
+dn: uid=paul,ou=people,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Paul
+sn: Thomas
+uid: paul
+userPassword: paul
