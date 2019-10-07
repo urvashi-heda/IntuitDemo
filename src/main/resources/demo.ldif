@@ -9,11 +9,6 @@ objectclass: top
 objectclass: organizationalUnit
 ou: groups
 
-dn: ou=subgroups,ou=groups,dc=urvashidemo,dc=com
-objectclass: top
-objectclass: organizationalUnit
-ou: subgroups
-
 dn: ou=people,dc=urvashidemo,dc=com
 objectclass: top
 objectclass: organizationalUnit
@@ -44,7 +39,33 @@ objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
-cn: Paul
+cn: Paul Thomas
 sn: Thomas
 uid: paul
 userPassword: paul
+
+dn: uid=admin,ou=people,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: admin
+sn: admin
+uid: admin
+userPassword: admin
+
+dn: cn=admin,ou=groups,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: admin
+ou: admin
+uniqueMember: uid=admin,ou=people,dc=urvashidemo,dc=com
+
+dn: cn=user,ou=groups,dc=urvashidemo,dc=com
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: user
+ou: user
+uniqueMember: uid=paul,ou=people,dc=urvashidemo,dc=com
+uniqueMember: uid=don,ou=people,dc=urvashidemo,dc=com
+uniqueMember: uid=urvashi,ou=people,dc=urvashidemo,dc=com

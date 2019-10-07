@@ -1,13 +1,15 @@
-package com.intuit.urvashicraftdemo;
-
+package com.intuit.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * Application entry class
+ * @author  Urvashi Heda
+ */
 @SpringBootApplication
-public class UrvashiCraftDemoApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(UrvashiCraftDemoApplication.class, args);
+		SpringApplication.run(DemoApplication.class, args);
 	}
-
 }

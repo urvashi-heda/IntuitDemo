@@ -1,4 +1,4 @@
-package com.intuit.urvashicraftdemo.security;
+package com.intuit.demo.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -8,7 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
 /**
- * LDAP authentication permission configuration for all REST APIs
+ * LDAP authentication permission configuration for all REST APIs.
+ * @author Urvashi Heda
  */
 @Configuration
 @EnableWebSecurity
@@ -25,13 +26,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .csrf().disable()
             .authorizeRequests()
             .antMatchers(HttpMethod.GET, "/anonymous").permitAll()
-            .antMatchers(HttpMethod.GET, "/").fullyAuthenticated()
-            .antMatchers(HttpMethod.POST, "/tweet").fullyAuthenticated()
-            .antMatchers(HttpMethod.POST, "/follow").fullyAuthenticated()
-            .antMatchers(HttpMethod.GET, "/following").fullyAuthenticated()
+            .antMatchers(HttpMethod.GET, "/admin").hasRole("ADMIN")
+            .antMatchers(HttpMethod.POST, "/login").fullyAuthenticated()
+            .antMatchers(HttpMethod.PUT, "/follow").fullyAuthenticated()
+            .antMatchers(HttpMethod.GET, "/followees").fullyAuthenticated()
+            .antMatchers(HttpMethod.GET, "/unfollow").fullyAuthenticated()
             .antMatchers(HttpMethod.GET, "/feed").fullyAuthenticated()
-            .antMatchers(HttpMethod.GET, "/myTweets").fullyAuthenticated()
-            .antMatchers(HttpMethod.GET, "/database").fullyAuthenticated()
+            .antMatchers(HttpMethod.POST, "/tweet").fullyAuthenticated()
+            .antMatchers(HttpMethod.GET, "/tweets").fullyAuthenticated()
             .and()
                 .logout()
                 .clearAuthentication(true)

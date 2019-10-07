@@ -20,6 +20,7 @@ dependencies {
 	implementation 'org.springframework.ldap:spring-ldap-core'
 	implementation 'org.springframework:spring-tx'
 	implementation 'com.unboundid:unboundid-ldapsdk'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
 }
