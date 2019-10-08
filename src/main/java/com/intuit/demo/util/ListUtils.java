@@ -13,6 +13,6 @@ public class ListUtils {
      * @return is the collection empty or not
      */
     public static boolean isEmpty(Collection<?> collection) {
-        return collection != null && !collection.isEmpty();
+        return collection == null || collection.isEmpty();
     }
 }

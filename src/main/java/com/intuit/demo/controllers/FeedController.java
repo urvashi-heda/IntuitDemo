@@ -1,6 +1,6 @@
 package com.intuit.demo.controllers;
 
-import com.intuit.demo.dao.DemoFeedDAO;
+import com.intuit.demo.dao.FeedDAO;
 import com.intuit.demo.models.Tweet;
 import com.intuit.demo.util.ListUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class FeedController {
 
     @Autowired
-    private DemoFeedDAO feedDAO;
+    private FeedDAO feedDAO;
 
     /**
      * Api for getting the feed for a user.

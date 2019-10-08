@@ -1,6 +1,6 @@
 package com.intuit.demo.controllers;
 
-import com.intuit.demo.dao.DemoFollowDAO;
+import com.intuit.demo.dao.FollowDAO;
 import com.intuit.demo.exceptions.IncorrectRequestException;
 import com.intuit.demo.exceptions.FollowNotAllowedException;
 import com.intuit.demo.models.Follow;
@@ -23,7 +23,7 @@ import java.util.Set;
 public class FollowController {
 
     @Autowired
-    private DemoFollowDAO followDAO;
+    private FollowDAO followDAO;
 
     /**
      * Api for following a user.
@@ -60,7 +60,7 @@ public class FollowController {
     public ResponseEntity<Set<String>> getUsersIAmFollowing() throws Exception {
         try {
             Set<String> followees = followDAO.getUsersIAmFollowing();
-            if(ListUtils.isEmpty(followees)) {
+            if(!ListUtils.isEmpty(followees)) {
                 return new ResponseEntity<>(followees, HttpStatus.OK);
             } else {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

@@ -1,6 +1,7 @@
 package com.intuit.demo.controllers;
 
-import com.intuit.demo.dao.DemoTweetDAO;
+import com.intuit.demo.dao.TweetDAO;
+import com.intuit.demo.exceptions.FollowNotAllowedException;
 import com.intuit.demo.exceptions.IncorrectRequestException;
 import com.intuit.demo.models.Tweet;
 import com.intuit.demo.models.requestbody.TweetRequestBody;
@@ -22,7 +23,7 @@ import java.util.ArrayList;
 public class TweetController {
 
     @Autowired
-    private DemoTweetDAO tweetDAO;
+    private TweetDAO tweetDAO;
 
     /**
      * Api for posting a tweet.
