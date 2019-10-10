@@ -30,7 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.POST, "/login").fullyAuthenticated()
             .antMatchers(HttpMethod.PUT, "/follow").fullyAuthenticated()
             .antMatchers(HttpMethod.GET, "/followees").fullyAuthenticated()
-            .antMatchers(HttpMethod.GET, "/unfollow").fullyAuthenticated()
+            .antMatchers(HttpMethod.PUT, "/unfollow").fullyAuthenticated()
             .antMatchers(HttpMethod.GET, "/feed").fullyAuthenticated()
             .antMatchers(HttpMethod.POST, "/tweet").fullyAuthenticated()
             .antMatchers(HttpMethod.GET, "/tweets").fullyAuthenticated()
